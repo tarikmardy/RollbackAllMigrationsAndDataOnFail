@@ -18,7 +18,7 @@ class RollbackAllMigrationsAndDataOnFail extends Command
 
         try {
             $connection->beginTransaction();
-            $migrationsPath = 'database/workspace/migrations';
+            $migrationsPath = 'database/migrations';
 
             $restorationClosure = function () use ($connection) {
                 $connection->rollBack();
